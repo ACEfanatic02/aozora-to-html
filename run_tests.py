@@ -22,6 +22,7 @@ parser_paragraphs = parser_tests.TestParser('test_parseParagraphs')
 parser_pagesplit  = parser_tests.TestParser('test_pageSplit')
 
 ruby_tohtml = ruby_tests.TestRuby('test_toHtml')
+ruby_parse  = ruby_tests.TestRuby('test_parseRubytext')
 
 test_suite = test_runner.ModuleTestRunner()
 
@@ -32,7 +33,8 @@ test_suite.addTestList("Parser", [parser_newlines,
                                   parser_headings,
                                   parser_pagesplit,])
 
-test_suite.addTestList("Ruby", [ruby_tohtml,])
+test_suite.addTestList("Ruby", [ruby_tohtml,
+                                ruby_parse])
 
 if __name__ == "__main__":
     # Run test suite

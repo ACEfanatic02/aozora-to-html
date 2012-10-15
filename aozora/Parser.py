@@ -1,100 +1,88 @@
 # -*- coding: utf-8 -*-
 
-""" Aozora Parser
-
-Parses an 青空文庫-formatted text file.  Does not process any HTML.
-"""
-
 import re
 
-class Parser(object):
-    """ Parser
+""" Parser
 
-    Static class for parsing 青空文庫-formatted text into Python strings.  Assumes
-    UTF-8 input and returns Python unicode literals; makes no attempt to deal
-    with any other encoding.
+Module for parsing 青空文庫-formatted text into Python strings.  Assumes
+UTF-8 input and returns Python unicode literals; makes no attempt to deal
+with any other encoding.
+"""
+RE_EMPTY = ur'^[ \t\r\f\v]*$' # \s doesn't match empty unicode properly
+
+def cleanNewlines(raw):
+    """ 
+    Standardizes newlines. Does not remove extra newlines. 
     """
-    RE_EMPTY = ur'^[ \t\r\f\v]*$' # \s doesn't match empty unicode properly
+    raw = re.sub(ur'\r\n', u'\n', raw)
+    return raw
 
-    @staticmethod
-    def cleanNewlines(raw):
-        """ 
-        Standardizes newlines. Does not remove extra newlines. 
-        """
-        raw = re.sub(ur'\r\n', u'\n', raw)
-        return raw
+def findHeadings(strlist):
+    """
+    Finds anything that looks like a chapter heading in a list of strings
+    and returns a list of their indicies.
+    """
+    rv = []
 
-    @staticmethod
-    def parse(raw):
-        pass
+    for i in range(len(strlist)):
+        string = strlist[i]
 
-    @staticmethod
-    def findHeadings(strlist):
-        """
-        Finds anything that looks like a chapter heading in a list of strings
-        and returns a list of their indices.
-        """
-        rv = []
+        heading = re.match(ur"^.*[０-９]$", string)
+        if heading:
+            rv.append(i)
 
-        for i in range(len(strlist)):
-            heading = None
-            string = strlist[i]
+    return rv
 
-            heading = re.match(ur"^.*[０-９]$", string)
-            if heading:
-                rv.append(i)
+def parseParagraphs(raw):
+    """
+    Parses paragraphs into a list of unicode strings.  Does not return
+    empty strings.
+    """
+    rv = []
+    raw = cleanNewlines(raw)
 
-        return rv
+    split = raw.split(u'\n')
+    for paragraph in split:
+        if not re.search(paragraph, RE_EMPTY):
+            rv.append(paragraph)
 
-    @staticmethod
-    def parseParagraphs(raw):
-        """
-        Parses paragraphs into a list of unicode strings.  Does not return
-        empty strings.
-        """
-        rv = []
-        raw = Parser.cleanNewlines(raw)
+    return rv
 
-        split = raw.split(u'\n')
-        for paragraph in split:
-            if not re.search(paragraph, Parser.RE_EMPTY):
-                rv.append(paragraph)
+def pageSplit(strlist):
+    """
+    Takes a list of strings, returns a nested list in blocks of ~400
+    characters. (One Tadoku page.)
+    """
+    forced_pgbreak = re.compile(ur"［＃改.*?］")
 
-        return rv
+    pages = []
 
-    @staticmethod
-    def pageSplit(strlist):
-        """
-        Takes a list of strings, returns a nested list in blocks of ~400
-        characters. (One Tadoku page.)
-        """
-        forced_pgbreak = re.compile(ur"［＃改.*?］")
+    cur_page  = []
+    cur_pglen = 0
 
-        pages = []
+    for string in strlist:
 
-        cur_page  = []
-        cur_pglen = 0
-
-        for string in strlist:
-
-            if forced_pgbreak.match(string):
-                if len(cur_page) > 0:
-                    cur_page.append(string)
-                pages.append(cur_page)
-                cur_page  = []
-                cur_pglen = 0
-
-            elif cur_pglen + len(string) < 400:
+        if forced_pgbreak.match(string):
+            if len(cur_page) > 0:
                 cur_page.append(string)
-                cur_pglen += len(string)
+            pages.append(cur_page)
+            cur_page  = []
+            cur_pglen = 0
 
-            else:
-                pages.append(cur_page)
-                cur_page  = [string]
-                cur_pglen = len(string)
+        elif cur_pglen + len(string) < 400:
+            cur_page.append(string)
+            cur_pglen += len(string)
 
-        # Append the final page
-        pages.append(cur_page)
+        else:
+            pages.append(cur_page)
+            cur_page  = [string]
+            cur_pglen = len(string)
 
-        return pages
-        
+    # Append the final page
+    pages.append(cur_page)
+
+    return pages
+
+def parse(raw):
+    pass
+    

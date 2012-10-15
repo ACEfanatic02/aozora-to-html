@@ -4,7 +4,7 @@ import unittest
 import sys
 
 sys.path.append('..')
-from aozora.Parser import Parser
+from aozora import Parser
 
 class TestParser(unittest.TestCase):
 

@@ -2,46 +2,44 @@
 
 import re
 
-class Rubylizer(object):
+""" Rubylizer
+
+Module for preparing rubytext tags from the furigana marked in
+青空文庫-formatted text.
+"""
+
+def toHtml(kanji, rubytext):
     """
-    Static class for preparing rubytext tags from the furigana marked in
-    青空文庫-formatted text.
+    Produce the proper HTML tag given a block of %kanji and its related 
+    %rubytext.
+
+    TODO: Attempt to parse rubytext per character:
+    例    文
+    れい・ぶん
     """
 
-    @staticmethod
-    def toHtml(kanji, rubytext):
-        """
-        Produce the proper HTML tag given a block of %kanji and its related 
-        %rubytext.
+    return u"""<ruby><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>"""\
+            % (kanji, rubytext)
 
-        TODO: Attempt to parse rubytext per character:
-        例    文
-        れい・ぶん
-        """
+def parseRubytext(string):
+    """
+    Identifies furigana from the provided %string, then replaces with the
+    proper HTML tag set.
+    """
+    furigana_match = re.compile(ur"""
+        # match block separator (if it exists)
+        ([｜]?
+        # match and capture kanji
+        [々\u3400-\u4DB5\u4E00-\u9FCB\uF900-\uFA6A]+)     
+        # match and capture ruby statement
+        (《.*?》)
+        """, re.X)
 
-        return u"""<ruby><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>"""\
-                % (kanji, rubytext)
+    for match in furigana_match.finditer(string):
+        kanji = match.group(1).lstrip(u'｜')
+        rubytext = match.group(2).strip(u'《》')
 
-    @staticmethod
-    def parseRubytext(string):
-        """
-        Identifies furigana from the provided %string, then replaces with the
-        proper HTML tag set.
-        """
-        furigana_match = re.compile(ur"""
-            # match block separator (if it exists)
-            ([｜]?
-            # match and capture kanji
-            [々\u3400-\u4DB5\u4E00-\u9FCB\uF900-\uFA6A]+)     
-            # match and capture ruby statement
-            (《.*?》)
-            """, re.X)
+        string = string.replace(match.group(), 
+            toHtml(kanji, rubytext))
 
-        for match in furigana_match.finditer(string):
-            kanji = match.group(1).lstrip(u'｜')
-            rubytext = match.group(2).strip(u'《》')
-
-            string = string.replace(match.group(), 
-                Rubylizer.toHtml(kanji, rubytext))
-
-        return string
+    return string
