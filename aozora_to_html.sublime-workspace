@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"string",
+				"string"
+			],
+			[
+				"cu",
+				"cur_pglen"
+			],
+			[
+				"cur",
+				"cur_page"
+			],
+			[
+				"Pa",
+				"Parser"
+			],
+			[
+				"class",
+				"classmethod"
+			],
+			[
+				"par",
+				"parseParagraphs"
+			],
+			[
+				"pars",
+				"parser_tests"
+			],
+			[
+				"parser",
+				"parser_tests"
+			],
+			[
+				"clas",
+				"classmethod"
+			],
+			[
+				"test",
+				"test_suite"
+			],
+			[
 				"tadok",
 				"tadokulog"
 			],
@@ -158,10 +198,6 @@
 			[
 				"A",
 				"AttributeError"
-			],
-			[
-				"test",
-				"testlist"
 			],
 			[
 				"Test",
@@ -478,47 +514,59 @@
 			[
 				"actio",
 				"actionLoad"
-			],
-			[
-				"acti",
-				"actionLoad"
-			],
-			[
-				"Qt",
-				"QtGui"
-			],
-			[
-				"med",
-				"mediaGrid"
-			],
-			[
-				"meda",
-				"mediaBox"
-			],
-			[
-				"media",
-				"mediaBox"
-			],
-			[
-				"Tadoku",
-				"Tadoku-Tan"
-			],
-			[
-				"qr",
-				"QRadioButton"
-			],
-			[
-				"setup",
-				"setupMediaButtons"
-			],
-			[
-				"Main",
-				"MainWindow"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "run_tests.py",
+			"settings":
+			{
+				"buffer_size": 886,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "tests/parser_tests.py",
+			"settings":
+			{
+				"buffer_size": 1583,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/pretty.py",
+			"settings":
+			{
+				"buffer_size": 1421,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "lib/BeautifulSoup.py",
+			"settings":
+			{
+				"buffer_size": 79448,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aozora_to_html.py",
+			"settings":
+			{
+				"buffer_size": 955,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aozora/Parser.py",
+			"settings":
+			{
+				"buffer_size": 2041,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -572,6 +620,7 @@
 	},
 	"file_history":
 	[
+		"/home/bryantaylor/python_projects/aozora_new/aozora_to_html.sublime-project",
 		"/home/bryantaylor/python_projects/tadokutan/tadokutan.log",
 		"/home/bryantaylor/python_projects/tadokutan/res/Ui/Entries.py",
 		"/home/bryantaylor/python_projects/tadokutan/tests/Tweet_tests.py",
@@ -698,8 +747,7 @@
 		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan.py",
 		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuConfig.py",
 		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuTweet.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan.log",
-		"/home/bryantaylor/python_projects/flaskr/flaskr.py"
+		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan.log"
 	],
 	"find":
 	{
@@ -717,6 +765,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"[]\n",
 			"default",
 			"addItem",
 			"text=",
@@ -749,8 +798,177 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "run_tests.py",
+					"settings":
+					{
+						"buffer_size": 886,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								89,
+								89
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tests/parser_tests.py",
+					"settings":
+					{
+						"buffer_size": 1583,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1570,
+								1570
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "lib/pretty.py",
+					"settings":
+					{
+						"buffer_size": 1421,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								945,
+								945
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "lib/BeautifulSoup.py",
+					"settings":
+					{
+						"buffer_size": 79448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3989,
+								3989
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2790.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "aozora_to_html.py",
+					"settings":
+					{
+						"buffer_size": 955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								873,
+								873
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 135.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "aozora/Parser.py",
+					"settings":
+					{
+						"buffer_size": 2041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1705,
+								1705
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -771,11 +989,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -789,6 +1014,10 @@
 	{
 		"height": 100.0
 	},
+	"output.exec":
+	{
+		"height": 25.0
+	},
 	"replace":
 	{
 		"height": 0.0
@@ -799,6 +1028,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"b",
+				"lib/BeautifulSoup.py"
+			],
+			[
+				"pre",
+				"lib/pretty.py"
+			],
+			[
+				"",
+				"aozora_to_html.py"
+			],
+			[
+				"run",
+				"run_tests.py"
+			],
 			[
 				"log",
 				"tadokutan.log"
@@ -824,10 +1069,6 @@
 				"res/Ui/Misc.py"
 			],
 			[
-				"run",
-				"run_tests.py"
-			],
-			[
 				"test",
 				"lib/test_runner.py"
 			],
@@ -850,10 +1091,6 @@
 			[
 				"pr",
 				"tadokutan/DEFAULT_PY.sublime-project"
-			],
-			[
-				"",
-				"tadokutan/.gitignore"
 			],
 			[
 				"l",
@@ -1302,14 +1539,6 @@
 			[
 				"ses",
 				"app/controllers/sessions_controller.rb"
-			],
-			[
-				"usser",
-				"app/controllers/users_controller.rb"
-			],
-			[
-				"users",
-				"app/controllers/users_controller.rb"
 			]
 		],
 		"width": 0.0
