@@ -20,6 +20,7 @@ parser_newlines   = parser_tests.TestParser('test_cleanNewlines')
 parser_headings   = parser_tests.TestParser('test_findHeadings')
 parser_paragraphs = parser_tests.TestParser('test_parseParagraphs')
 parser_pagesplit  = parser_tests.TestParser('test_pageSplit')
+parser_parse      = parser_tests.TestParser('test_parse')
 
 ruby_tohtml = ruby_tests.TestRuby('test_toHtml')
 ruby_parse  = ruby_tests.TestRuby('test_parseRubytext')
@@ -31,7 +32,8 @@ test_suite = test_runner.ModuleTestRunner()
 test_suite.addTestList("Parser", [parser_newlines,
                                   parser_paragraphs,
                                   parser_headings,
-                                  parser_pagesplit,])
+                                  parser_pagesplit,
+                                  parser_parse])
 
 test_suite.addTestList("Ruby", [ruby_tohtml,
                                 ruby_parse])

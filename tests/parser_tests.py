@@ -83,3 +83,46 @@ This should be page four.
         self.assertEqual(pages[1][0], u"Second page.")
         self.assertEqual(pages[2][0], u"This should be page three.")
         self.assertEqual(pages[3][0], u"This should be page four.")
+
+    def test_parse(self):
+
+        testdata = u"""
+﻿化物語（上）
+西尾維新
+
+<img src="img/a001_s.jpg">
+<img src="img/a004_s.jpg">
+<img src="img/bakemono0003_s.jpg">
+<img src="img/bakemono0004_s.jpg">
+<img src="img/bakemono0005_s.jpg">
+<img src="img/bakemono0006_s.jpg">
+<img src="img/bakemono0007_s.jpg">
+<img src="img/bakemono0008_s.jpg">
+<img src="img/bakemono0009_s.jpg">
+［＃改ページ］
+化バケモノ物ガタリ語　上
+西尾維新NISIOISIN
+
+阿良々木《あららぎ》暦《こよみ》を目がけて空から降ってきた女の子・戦場《せんじょう》ヶ｜原《はら》ひたぎには、およそ体重と呼べるようなものが、全くと言っていいほど、なかった――!?
+台湾から現れた新人イラストレーター、〝光の魔術師〟ことＶＯＦＡＮと新たにコンビを組み、あの西尾維新が満を持して放つ、これぞ現代の怪異！　怪異！　怪異！
+青春に、おかしなことはつきもの［＃「つきもの」に傍点］だ！
+［＃改ページ］
+BOOK&BOX DESIGN VEIA
+FONT DIRECTION
+SHINICHIKONNO
+(TOPPAN PRINTING CO.,LTD)
+ILLUSTRTION
+VOFAN
+
+本文使用書体：FOT-筑紫明朝ProL
+［＃改ページ］
+第一話　ひたぎクラブ
+第二話　まよいマイマイ
+第三話　するがモンキー
+［＃改ページ］
+
+［＃改ページ］
+第一話　ひたぎクラブ
+［＃改ページ］
+"""
+        print Parser.parse(testdata)

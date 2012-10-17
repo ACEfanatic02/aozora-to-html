@@ -4,6 +4,106 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"parser_parse"
+			],
+			[
+				"Tes",
+				"TestParser"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"B",
+				"BeautifulSoup"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"utf",
+				"utf-8"
+			],
+			[
+				"ret",
+				"return"
+			],
+			[
+				"Hel",
+				"HELP_USAGE"
+			],
+			[
+				"rub",
+				"ruby_parse"
+			],
+			[
+				"Test",
+				"TestRuby"
+			],
+			[
+				"mul",
+				"multi_ruby_data"
+			],
+			[
+				"sin",
+				"single_ruby_data"
+			],
+			[
+				"to",
+				"toHtml"
+			],
+			[
+				"fu",
+				"furigana_match"
+			],
+			[
+				"de",
+				"defs	Method"
+			],
+			[
+				"r",
+				"ruby_tohtml"
+			],
+			[
+				"ru",
+				"ruby_tests"
+			],
+			[
+				"Ru",
+				"Rubylizer"
+			],
+			[
+				"par",
+				"paragraphs"
+			],
+			[
+				"if",
+				"if	If Condition"
+			],
+			[
+				"fb",
+				"fb_splits"
+			],
+			[
+				"for",
+				"forced_break"
+			],
+			[
+				"cur",
+				"cur_page"
+			],
+			[
+				"pars",
+				"parser_pagesplit"
+			],
+			[
+				"para",
+				"paragraphs"
+			],
+			[
 				"string",
 				"string"
 			],
@@ -12,24 +112,12 @@
 				"cur_pglen"
 			],
 			[
-				"cur",
-				"cur_page"
-			],
-			[
 				"Pa",
 				"Parser"
 			],
 			[
 				"class",
 				"classmethod"
-			],
-			[
-				"par",
-				"parseParagraphs"
-			],
-			[
-				"pars",
-				"parser_tests"
 			],
 			[
 				"parser",
@@ -200,14 +288,6 @@
 				"AttributeError"
 			],
 			[
-				"Test",
-				"TestCase"
-			],
-			[
-				"Tes",
-				"TestCase"
-			],
-			[
 				"tes",
 				"testlist"
 			],
@@ -250,10 +330,6 @@
 			[
 				"Q",
 				"QDialog"
-			],
-			[
-				"def",
-				"def	Function"
 			],
 			[
 				"twe",
@@ -376,10 +452,6 @@
 				"writec"
 			],
 			[
-				"if",
-				"ifmain	if __name__ == '__main__'"
-			],
-			[
 				"te",
 				"termcolors"
 			],
@@ -442,78 +514,6 @@
 			[
 				"Entr",
 				"EntriesDlg"
-			],
-			[
-				"ent",
-				"EntriesDlg"
-			],
-			[
-				"En",
-				"EntriesDlg"
-			],
-			[
-				"Qr",
-				"QtCore"
-			],
-			[
-				"score",
-				"scores_radio"
-			],
-			[
-				"tot",
-				"totallb"
-			],
-			[
-				"dialo",
-				"dialogLayout"
-			],
-			[
-				"dia",
-				"dialogLayout"
-			],
-			[
-				"scores",
-				"scores_radio"
-			],
-			[
-				"Scores",
-				"ScoresDlg"
-			],
-			[
-				"scor",
-				"ScoresDlg"
-			],
-			[
-				"Score",
-				"ScoresDlg"
-			],
-			[
-				"tado",
-				"tadokutan"
-			],
-			[
-				"tota",
-				"total_score"
-			],
-			[
-				"to",
-				"total_score"
-			],
-			[
-				"mai",
-				"mainLayout"
-			],
-			[
-				"submit",
-				"submitLayout"
-			],
-			[
-				"meu",
-				"menuFile"
-			],
-			[
-				"actio",
-				"actionLoad"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "run_tests.py",
 			"settings":
 			{
-				"buffer_size": 886,
+				"buffer_size": 1312,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,15 +531,15 @@
 			"file": "tests/parser_tests.py",
 			"settings":
 			{
-				"buffer_size": 1583,
+				"buffer_size": 3364,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "lib/pretty.py",
+			"file": "tests/ruby_tests.py",
 			"settings":
 			{
-				"buffer_size": 1421,
+				"buffer_size": 929,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,7 +555,7 @@
 			"file": "aozora_to_html.py",
 			"settings":
 			{
-				"buffer_size": 955,
+				"buffer_size": 1756,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,7 +563,15 @@
 			"file": "aozora/Parser.py",
 			"settings":
 			{
-				"buffer_size": 2041,
+				"buffer_size": 1934,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aozora/Rubylizer.py",
+			"settings":
+			{
+				"buffer_size": 1113,
 				"line_ending": "Unix"
 			}
 		}
@@ -620,6 +628,14 @@
 	},
 	"file_history":
 	[
+		"/home/bryantaylor/python_projects/aozora_new/aozora/HtmlBuilder.py",
+		"/home/bryantaylor/Tadoku Tools/PageMarker.py",
+		"/home/bryantaylor/Tadoku Tools/TadokuTools.py",
+		"/home/bryantaylor/aozora_scratch_test.html",
+		"/home/bryantaylor/python_projects/aozora_new/lib/BeautifulSoup.py",
+		"/home/bryantaylor/python_projects/aozora_new/.gitignore",
+		"/home/bryantaylor/python_projects/aozora_parser/parser.py",
+		"/home/bryantaylor/python_projects/aozora_new/lib/pretty.py",
 		"/home/bryantaylor/python_projects/aozora_new/aozora_to_html.sublime-project",
 		"/home/bryantaylor/python_projects/tadokutan/tadokutan.log",
 		"/home/bryantaylor/python_projects/tadokutan/res/Ui/Entries.py",
@@ -628,7 +644,6 @@
 		"/home/bryantaylor/c_projects/csc200_03/Makefile",
 		"/home/bryantaylor/python_projects/tadokutan/run_tests.py",
 		"/home/bryantaylor/python_projects/tadokutan/lib/test_runner.py",
-		"/home/bryantaylor/python_projects/aozora_parser/parser.py",
 		"/home/bryantaylor/python_projects/tadokutan/lib/pretty.py",
 		"/home/bryantaylor/python_projects/tadokutan/tadokutan/Log.py",
 		"/home/bryantaylor/python_projects/tadokutan/tadokutan/Ui.py",
@@ -738,16 +753,9 @@
 		"/home/bryantaylor/c_projects/the_hard_way/ex1.c",
 		"/home/bryantaylor/c_projects/the_hard_way/ex2.c",
 		"/home/bryantaylor/c_projects/the_hard_way/ex1",
-		"/home/bryantaylor/Tadoku Tools/PageMarker.py",
-		"/home/bryantaylor/Tadoku Tools/TadokuTools.py",
 		"/home/bryantaylor/Tadoku Tools/BeautifulSoup.py",
 		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuLog.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan_newentry.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokuui.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuConfig.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuTweet.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan.log"
+		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan_newentry.py"
 	],
 	"find":
 	{
@@ -765,6 +773,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"return",
 			"[]\n",
 			"default",
 			"addItem",
@@ -806,15 +815,15 @@
 					"file": "run_tests.py",
 					"settings":
 					{
-						"buffer_size": 886,
+						"buffer_size": 1312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								89,
-								89
+								1149,
+								1149
 							]
 						],
 						"settings":
@@ -834,41 +843,43 @@
 					"file": "tests/parser_tests.py",
 					"settings":
 					{
-						"buffer_size": 1583,
+						"buffer_size": 3364,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1570,
-								1570
+								2914,
+								2914
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage"
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 1260.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "lib/pretty.py",
+					"file": "tests/ruby_tests.py",
 					"settings":
 					{
-						"buffer_size": 1421,
+						"buffer_size": 929,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								945,
-								945
+								928,
+								928
 							]
 						],
 						"settings":
@@ -895,8 +906,8 @@
 						"selection":
 						[
 							[
-								3989,
-								3989
+								46459,
+								46459
 							]
 						],
 						"settings":
@@ -906,7 +917,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2790.0,
+						"translation.y": 18937.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -922,23 +933,25 @@
 					"file": "aozora_to_html.py",
 					"settings":
 					{
-						"buffer_size": 955,
+						"buffer_size": 1756,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								873,
-								873
+								246,
+								246
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 135.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -948,23 +961,53 @@
 					"file": "aozora/Parser.py",
 					"settings":
 					{
-						"buffer_size": 2041,
+						"buffer_size": 1934,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1705,
-								1705
+								1591,
+								1591
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "aozora/Rubylizer.py",
+					"settings":
+					{
+						"buffer_size": 1113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1113,
+								1113
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1000,7 +1043,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.489576547231,
 			1.0
 		],
 		"rows":
@@ -1028,6 +1071,14 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"bea",
+				"lib/BeautifulSoup.py"
+			],
+			[
+				".",
+				".gitignore"
+			],
 			[
 				"b",
 				"lib/BeautifulSoup.py"
@@ -1531,14 +1582,6 @@
 			[
 				"_header",
 				"app/views/layouts/_header.html.erb"
-			],
-			[
-				"usco",
-				"app/controllers/users_controller.rb"
-			],
-			[
-				"ses",
-				"app/controllers/sessions_controller.rb"
 			]
 		],
 		"width": 0.0
@@ -1551,7 +1594,7 @@
 		],
 		"width": 0.0
 	},
-	"show_minimap": false,
+	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": false,

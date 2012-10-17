@@ -12,10 +12,9 @@ RE_EMPTY = ur'^[ \t\r\f\v]*$' # \s doesn't match empty unicode properly
 
 def cleanNewlines(raw):
     """ 
-    Standardizes newlines. Does not remove extra newlines. 
+    Standardizes newlines in %raw. Does not remove extra newlines. 
     """
-    raw = re.sub(ur'\r\n', u'\n', raw)
-    return raw
+    return re.sub(ur'\r\n', u'\n', raw)
 
 def findHeadings(strlist):
     """
@@ -27,7 +26,7 @@ def findHeadings(strlist):
     for i in range(len(strlist)):
         string = strlist[i]
 
-        heading = re.match(ur"^.*[０-９]$", string)
+        heading = re.match(ur"^.*[０-９]+$", string)
         if heading:
             rv.append(i)
 
@@ -86,3 +85,4 @@ def pageSplit(strlist):
 def parse(raw):
     pass
     
+
