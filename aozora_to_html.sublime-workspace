@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"to",
+				"to_next_page"
+			],
+			[
+				"ton",
+				"to_next_skip"
+			],
+			[
+				"tone",
+				"to_next_page"
+			],
+			[
+				"nex",
+				"next_skip"
+			],
+			[
+				"mar",
+				"markers"
+			],
+			[
+				"cur",
+				"cur_pos"
+			],
+			[
+				"tex",
+				"text_len"
+			],
+			[
+				"cu",
+				"cur_pos"
+			],
+			[
+				"raw",
+				"raw_text"
+			],
+			[
+				"head",
+				"heading_regex"
+			],
+			[
+				"o",
+				"object"
+			],
+			[
+				"mark",
+				"mark_pages"
+			],
+			[
+				"df",
+				"defs	Method"
+			],
+			[
 				"pa",
 				"parser_parse"
 			],
@@ -52,10 +104,6 @@
 				"single_ruby_data"
 			],
 			[
-				"to",
-				"toHtml"
-			],
-			[
 				"fu",
 				"furigana_match"
 			],
@@ -92,10 +140,6 @@
 				"forced_break"
 			],
 			[
-				"cur",
-				"cur_page"
-			],
-			[
 				"pars",
 				"parser_pagesplit"
 			],
@@ -106,10 +150,6 @@
 			[
 				"string",
 				"string"
-			],
-			[
-				"cu",
-				"cur_pglen"
 			],
 			[
 				"Pa",
@@ -474,46 +514,6 @@
 			[
 				"creat",
 				"createConfig"
-			],
-			[
-				"file",
-				"filename"
-			],
-			[
-				"OTHE",
-				"OTHER_DEFAULTS"
-			],
-			[
-				"OTH",
-				"OTHER_DEFAULTS"
-			],
-			[
-				"Sco",
-				"SCORING_DEFAULTS"
-			],
-			[
-				"SCORING",
-				"SCORING_DEFAULTS"
-			],
-			[
-				"e",
-				"e"
-			],
-			[
-				"tr",
-				"try	Try/Except"
-			],
-			[
-				"remo",
-				"removeButton"
-			],
-			[
-				"button",
-				"buttonLayout"
-			],
-			[
-				"Entr",
-				"EntriesDlg"
 			]
 		]
 	},
@@ -544,6 +544,14 @@
 			}
 		},
 		{
+			"file": "lib/TadokuTools/PageMarker.py",
+			"settings":
+			{
+				"buffer_size": 3677,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "lib/BeautifulSoup.py",
 			"settings":
 			{
@@ -563,7 +571,7 @@
 			"file": "aozora/Parser.py",
 			"settings":
 			{
-				"buffer_size": 1934,
+				"buffer_size": 4721,
 				"line_ending": "Unix"
 			}
 		},
@@ -628,8 +636,8 @@
 	},
 	"file_history":
 	[
-		"/home/bryantaylor/python_projects/aozora_new/aozora/HtmlBuilder.py",
 		"/home/bryantaylor/Tadoku Tools/PageMarker.py",
+		"/home/bryantaylor/python_projects/aozora_new/aozora/HtmlBuilder.py",
 		"/home/bryantaylor/Tadoku Tools/TadokuTools.py",
 		"/home/bryantaylor/aozora_scratch_test.html",
 		"/home/bryantaylor/python_projects/aozora_new/lib/BeautifulSoup.py",
@@ -807,7 +815,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -850,8 +858,8 @@
 						"selection":
 						[
 							[
-								2914,
-								2914
+								3179,
+								3179
 							]
 						],
 						"settings":
@@ -861,7 +869,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1260.0,
+						"translation.y": 1125.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -896,6 +904,34 @@
 				},
 				{
 					"buffer": 3,
+					"file": "lib/TadokuTools/PageMarker.py",
+					"settings":
+					{
+						"buffer_size": 3677,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3583,
+								3583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 7.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "lib/BeautifulSoup.py",
 					"settings":
 					{
@@ -929,7 +965,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "aozora_to_html.py",
 					"settings":
 					{
@@ -957,19 +993,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "aozora/Parser.py",
 					"settings":
 					{
-						"buffer_size": 1934,
+						"buffer_size": 4721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1591,
-								1591
+								2025,
+								2025
 							]
 						],
 						"settings":
@@ -979,13 +1015,13 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 585.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "aozora/Rubylizer.py",
 					"settings":
 					{
@@ -1071,6 +1107,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"pa",
+				"lib/TadokuTools/PageMarker.py"
+			],
 			[
 				"bea",
 				"lib/BeautifulSoup.py"
@@ -1578,10 +1618,6 @@
 			[
 				"ind",
 				"app/views/users/index.html.erb"
-			],
-			[
-				"_header",
-				"app/views/layouts/_header.html.erb"
 			]
 		],
 		"width": 0.0

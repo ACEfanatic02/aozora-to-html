@@ -1,6 +1,9 @@
 # -*- coding: utf-8 -*-
 
+import sys
 import re
+
+from aozora.Rubylizer import parseRubytext
 
 """ Parser
 
@@ -8,81 +11,116 @@ Module for parsing 青空文庫-formatted text into Python strings.  Assumes
 UTF-8 input and returns Python unicode literals; makes no attempt to deal
 with any other encoding.
 """
-RE_EMPTY = ur'^[ \t\r\f\v]*$' # \s doesn't match empty unicode properly
 
-def cleanNewlines(raw):
-    """ 
-    Standardizes newlines in %raw. Does not remove extra newlines. 
-    """
-    return re.sub(ur'\r\n', u'\n', raw)
+class NovelParser(object):
 
-def findHeadings(strlist):
-    """
-    Finds anything that looks like a chapter heading in a list of strings
-    and returns a list of their indicies.
-    """
-    rv = []
+    def __init__(self, pglen=400, heading_regex=ur"^.*[０-９]+$"):
+        """ Attributes:
+        %pglen : approximate length of one page in characters.
+        %heading_regex : unicode regex string for identifying chapter headings.
+        """
 
-    for i in range(len(strlist)):
-        string = strlist[i]
+        object.__init__(self)
 
-        heading = re.match(ur"^.*[０-９]+$", string)
-        if heading:
-            rv.append(i)
+        self.pglen = pglen
+        self.heading_regex = heading_regex
 
-    return rv
+    def _clense(self, text):
+        """
+        Standardizes newlines.
+        """
+        text = re.sub(ur'\r\n', u'\n', text)
+        text = re.sub(ur'\r', u'\n', text)
+        return text
 
-def parseParagraphs(raw):
-    """
-    Parses paragraphs into a list of unicode strings.  Does not return
-    empty strings.
-    """
-    rv = []
-    raw = cleanNewlines(raw)
+    def _mark_pages(self, text):
+        """
+        Inserts comments in %text to mark the end of pages.  Differs from BDH's
+        in that it breaks only at newlines or punctuation for a clean result.
+        """
+        # Regex ripped wholesale from BDH.
+        to_skip = re.compile(ur"""((-------------------------------------------------------.*?-------------------------------------------------------)|(｜)|(［＃.*?］)|(《.*?》)|(<.*?>)|(\n)|(\s))+""", re.UNICODE | re.S)
 
-    split = raw.split(u'\n')
-    for paragraph in split:
-        if not re.search(paragraph, RE_EMPTY):
-            rv.append(paragraph)
+        skipped = []
+        for match in to_skip.finditer(text):
+            skipped.append(match.span())
 
-    return rv
+        markers = []
 
-def pageSplit(strlist):
-    """
-    Takes a list of strings, returns a nested list in blocks of ~400
-    characters. (One Tadoku page.)
-    """
-    forced_pgbreak = re.compile(ur"［＃改.*?］")
+        cur_pos = 0
+        num_chars = 0
+        text_len = len(text)
+        next_skip = 0
 
-    pages = []
+        while cur_pos < text_len:
 
-    cur_page  = []
-    cur_pglen = 0
+            if num_chars % self.pglen == 0 and not \
+                (next_skip < len(skipped) and skipped[next_skip][0] == cur_pos):
+               
+                # Okay, we need a new page: look for the next good breakpoint:
+                offset = 0
+                while not (text[cur_pos + offset] in u"、。！？!?\n"):
+                    
+                    # Don't go past EOF            
+                    if offset + cur_pos == text_len:
+                        break
 
-    for string in strlist:
+                    offset += 1
 
-        if forced_pgbreak.match(string):
-            if len(cur_page) > 0:
-                cur_page.append(string)
-            pages.append(cur_page)
-            cur_page  = []
-            cur_pglen = 0
+                markers.append(cur_pos + offset)
 
-        elif cur_pglen + len(string) < 400:
-            cur_page.append(string)
-            cur_pglen += len(string)
+            to_next_page = self.pglen - (num_chars % self.pglen)
+            to_next_skip = sys.maxint
 
-        else:
-            pages.append(cur_page)
-            cur_page  = [string]
-            cur_pglen = len(string)
+            if next_skip < len(skipped):
+                to_next_skip = skipped[next_skip][0] - cur_pos
 
-    # Append the final page
-    pages.append(cur_page)
+            if to_next_skip <= to_next_page:
 
-    return pages
+                num_chars += to_next_skip
+                cur_pos = skipped[next_skip][1]
+                next_skip += 1
 
-def parse(raw):
-    pass
-    
+            else:
+                num_chars += to_next_page
+                cur_pos += to_next_page
 
+        # Now, actually insert the page markers
+        for index, pos in enumerate(reversed(markers)):
+            text = text[:pos] + u"［＃ページ " + str(
+                len(markers) - index) + u"］" + text[pos:]
+
+        return text
+
+    def _mark_headings(self, text):
+        """
+        Inserts comments to mark chapter headings.
+        """
+        heading_marker = u"［＃HEADING］"
+        headings = []
+
+        for match in text.finditer(self.heading_regex):
+            headings.append(match.start)
+
+        for index, pos in enumerate(reversed(headings)):
+            text = text[:pos] + heading_marker + text[pos:]
+
+        return text
+
+    def parse(self, raw_text):
+        """
+        Parse the %raw_text into a list of strings.
+        """
+        raw_text = self._clense(raw_text)
+
+        raw_text = self._mark_pages(raw_text)
+        raw_text = self._mark_headings(raw_text)
+
+        # Split lines
+        strlist = raw_text.split('\n')
+
+        # Convert rubytext
+        for string in strlist:
+            string = parseRubytext(string)
+
+        return strlist
