@@ -4,6 +4,90 @@
 		"selected_items":
 		[
 			[
+				"bou",
+				"bouten_start"
+			],
+			[
+				"fin",
+				"finditer"
+			],
+			[
+				"U",
+				"UNICODE"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"head",
+				"heading_regex"
+			],
+			[
+				"utf8",
+				"utf-8"
+			],
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"out",
+				"outputfile"
+			],
+			[
+				"in",
+				"inputfile"
+			],
+			[
+				"save",
+				"saveFile"
+			],
+			[
+				"par",
+				"paragraph"
+			],
+			[
+				"cont",
+				"continue"
+			],
+			[
+				"page",
+				"page_marker"
+			],
+			[
+				"headin",
+				"heading_marker"
+			],
+			[
+				"lo",
+				"logging"
+			],
+			[
+				"str",
+				"string"
+			],
+			[
+				"a",
+				"argv"
+			],
+			[
+				"load",
+				"loadFile"
+			],
+			[
+				"pars",
+				"parseRubytext"
+			],
+			[
+				"_ma",
+				"_mark_headings"
+			],
+			[
+				"tex",
+				"text"
+			],
+			[
 				"to",
 				"to_next_page"
 			],
@@ -28,20 +112,12 @@
 				"cur_pos"
 			],
 			[
-				"tex",
-				"text_len"
-			],
-			[
 				"cu",
 				"cur_pos"
 			],
 			[
 				"raw",
 				"raw_text"
-			],
-			[
-				"head",
-				"heading_regex"
 			],
 			[
 				"o",
@@ -124,10 +200,6 @@
 				"Rubylizer"
 			],
 			[
-				"par",
-				"paragraphs"
-			],
-			[
 				"if",
 				"if	If Condition"
 			],
@@ -138,10 +210,6 @@
 			[
 				"for",
 				"forced_break"
-			],
-			[
-				"pars",
-				"parser_pagesplit"
 			],
 			[
 				"para",
@@ -446,74 +514,6 @@
 			[
 				"clo",
 				"clonelog"
-			],
-			[
-				"as",
-				"assertEqual"
-			],
-			[
-				"lo",
-				"log_clone"
-			],
-			[
-				"con",
-				"config_load"
-			],
-			[
-				"n",
-				"n"
-			],
-			[
-				"Log",
-				"Log_tests"
-			],
-			[
-				"asse",
-				"assertFalse"
-			],
-			[
-				"contes",
-				"configtests"
-			],
-			[
-				"mode",
-				"modname"
-			],
-			[
-				"__",
-				"__init__"
-			],
-			[
-				"fail",
-				"failures"
-			],
-			[
-				"write",
-				"writec"
-			],
-			[
-				"te",
-				"termcolors"
-			],
-			[
-				"TES",
-				"TEST_LOG_FN"
-			],
-			[
-				"Other",
-				"OTHER_DEFAULTS"
-			],
-			[
-				"S",
-				"SCORING_DEFAULTS"
-			],
-			[
-				"ex",
-				"except"
-			],
-			[
-				"creat",
-				"createConfig"
 			]
 		]
 	},
@@ -563,7 +563,7 @@
 			"file": "aozora_to_html.py",
 			"settings":
 			{
-				"buffer_size": 1756,
+				"buffer_size": 2430,
 				"line_ending": "Unix"
 			}
 		},
@@ -571,7 +571,7 @@
 			"file": "aozora/Parser.py",
 			"settings":
 			{
-				"buffer_size": 4721,
+				"buffer_size": 3872,
 				"line_ending": "Unix"
 			}
 		},
@@ -579,7 +579,15 @@
 			"file": "aozora/Rubylizer.py",
 			"settings":
 			{
-				"buffer_size": 1113,
+				"buffer_size": 1863,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "aozora/HtmlBuilder.py",
+			"settings":
+			{
+				"buffer_size": 2233,
 				"line_ending": "Unix"
 			}
 		}
@@ -636,6 +644,7 @@
 	},
 	"file_history":
 	[
+		"/home/bryantaylor/python_projects/aozora_new/t/bake01.html",
 		"/home/bryantaylor/Tadoku Tools/PageMarker.py",
 		"/home/bryantaylor/python_projects/aozora_new/aozora/HtmlBuilder.py",
 		"/home/bryantaylor/Tadoku Tools/TadokuTools.py",
@@ -762,8 +771,7 @@
 		"/home/bryantaylor/c_projects/the_hard_way/ex2.c",
 		"/home/bryantaylor/c_projects/the_hard_way/ex1",
 		"/home/bryantaylor/Tadoku Tools/BeautifulSoup.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuLog.py",
-		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/tadokutan_newentry.py"
+		"/host/Users/Bryan Taylor/Documents/GitHub/tadoku-tan/TadokuLog.py"
 	],
 	"find":
 	{
@@ -815,7 +823,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -942,8 +950,8 @@
 						"selection":
 						[
 							[
-								46459,
-								46459
+								69121,
+								69121
 							]
 						],
 						"settings":
@@ -953,7 +961,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 18937.0,
+						"translation.y": 28853.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -961,7 +969,7 @@
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -969,15 +977,15 @@
 					"file": "aozora_to_html.py",
 					"settings":
 					{
-						"buffer_size": 1756,
+						"buffer_size": 2430,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								246,
-								246
+								1761,
+								1761
 							]
 						],
 						"settings":
@@ -987,7 +995,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -997,15 +1005,15 @@
 					"file": "aozora/Parser.py",
 					"settings":
 					{
-						"buffer_size": 4721,
+						"buffer_size": 3872,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2025,
-								2025
+								2010,
+								2010
 							]
 						],
 						"settings":
@@ -1015,7 +1023,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 1260.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1025,15 +1033,15 @@
 					"file": "aozora/Rubylizer.py",
 					"settings":
 					{
-						"buffer_size": 1113,
+						"buffer_size": 1863,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1113,
-								1113
+								1551,
+								1551
 							]
 						],
 						"settings":
@@ -1043,7 +1051,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 405.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "aozora/HtmlBuilder.py",
+					"settings":
+					{
+						"buffer_size": 2233,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1337,
+								1337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 190.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1107,6 +1143,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"bak",
+				"t/bake01.html"
+			],
+			[
+				"bake",
+				"t/bake01.html"
+			],
+			[
+				"ht",
+				"aozora/HtmlBuilder.py"
+			],
 			[
 				"pa",
 				"lib/TadokuTools/PageMarker.py"
@@ -1606,18 +1654,6 @@
 			[
 				"admin",
 				"db/migrate/20120720220801_add_admin_to_users.rb"
-			],
-			[
-				"i",
-				"app/views/users/index.html.erb"
-			],
-			[
-				"usrc",
-				"app/controllers/users_controller.rb"
-			],
-			[
-				"ind",
-				"app/views/users/index.html.erb"
 			]
 		],
 		"width": 0.0

@@ -23,7 +23,7 @@ class NovelParser(object):
         object.__init__(self)
 
         self.pglen = pglen
-        self.heading_regex = heading_regex
+        self.heading_regex = re.compile(heading_regex)
 
     def _clense(self, text):
         """
@@ -54,7 +54,7 @@ class NovelParser(object):
 
         while cur_pos < text_len:
 
-            if num_chars % self.pglen == 0 and not \
+            if num_chars % self.pglen == 0 and cur_pos >= self.pglen and not \
                 (next_skip < len(skipped) and skipped[next_skip][0] == cur_pos):
                
                 # Okay, we need a new page: look for the next good breakpoint:
@@ -67,7 +67,9 @@ class NovelParser(object):
 
                     offset += 1
 
-                markers.append(cur_pos + offset)
+                # Note: we add one to offset so our marker goes *after*
+                # the breakpoint.
+                markers.append(cur_pos + (offset + 1))
 
             to_next_page = self.pglen - (num_chars % self.pglen)
             to_next_skip = sys.maxint
@@ -87,8 +89,8 @@ class NovelParser(object):
 
         # Now, actually insert the page markers
         for index, pos in enumerate(reversed(markers)):
-            text = text[:pos] + u"［＃ページ " + str(
-                len(markers) - index) + u"］" + text[pos:]
+            text = text[:pos] + u"\n［＃ページ " + str(
+                len(markers) - index) + u"］\n" + text[pos:]
 
         return text
 
@@ -99,7 +101,7 @@ class NovelParser(object):
         heading_marker = u"［＃HEADING］"
         headings = []
 
-        for match in text.finditer(self.heading_regex):
+        for match in self.heading_regex.finditer(text):
             headings.append(match.start)
 
         for index, pos in enumerate(reversed(headings)):
@@ -111,16 +113,16 @@ class NovelParser(object):
         """
         Parse the %raw_text into a list of strings.
         """
-        raw_text = self._clense(raw_text)
+        #raw_text = self._clense(raw_text)
 
         raw_text = self._mark_pages(raw_text)
         raw_text = self._mark_headings(raw_text)
 
         # Split lines
-        strlist = raw_text.split('\n')
+        strlist = raw_text.splitlines(True)
 
         # Convert rubytext
-        for string in strlist:
-            string = parseRubytext(string)
+        for i, string in enumerate(strlist):
+            strlist[i] = parseRubytext(string)
 
         return strlist

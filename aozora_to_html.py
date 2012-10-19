@@ -33,7 +33,8 @@ import logging
 
 from lib import BeautifulSoup
 
-from aozora import Parser, Rubylizer
+from aozora.Parser import NovelParser
+from aozora.HtmlBuilder import buildHtml
 
 HELP_USAGE = """USAGE:
 $ python aozora_to_html.py <filename>
@@ -52,7 +53,7 @@ def loadFile(filename):
     BeautifulSoup's UnicodeDammit class.)
     """
     try:
-        with codecs.open(filename, 'r', encoding=codecs.UTF8) as f:
+        with codecs.open(filename, 'r', encoding='utf-8') as f:
             rv = f.read()
             f.close()
             return BeautifulSoup.UnicodeDammit(rv).unicode
@@ -60,8 +61,34 @@ def loadFile(filename):
         logging.error("ERROR - File load failed: %s" % str(e))
         return None
 
+def saveFile(filename, output):
+    """
+    Saves a unicode string %output to %filename.
+    Returns True on success and False on error.
+    """
+    try:
+        with codecs.open(filename, 'w', encoding='utf-8') as f:
+            f.write(output)
+            f.close()
+            return True
+    except IOError, e:
+        logging.error("ERROR - File save failed: %s" % str(e))
+        return False
+
 def main(argv):
-    pass
+
+    if len(argv) < 3:
+        help()
+
+    inputfile  = argv[1]
+    outputfile = argv[2]
+
+    raw = loadFile(inputfile)
+    parser = NovelParser()
+    strlist = parser.parse(raw)
+    output = buildHtml(strlist)
+
+    saveFile(outputfile, output)
 
 if __name__ == '__main__':
     main(sys.argv)
