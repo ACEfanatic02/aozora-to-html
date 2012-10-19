@@ -72,7 +72,7 @@ def buildHtml(strlist):
         # Header
         match = heading_marker.match(string)
         if match:
-            print "found header %s" % string
+            # print "found header %s" % string
             content = string[:match.start()] + string[match.end():]
 
             heading_count += 1
@@ -82,12 +82,12 @@ def buildHtml(strlist):
             # Page break
             match = page_marker.match(string)
             if match:
-                print "found pgbreak"
+                # print "found pgbreak"
                 strlist[i] = _pagebreak(match.group(1))
 
             else:
                 # Standard line
-                print "found paragraph"
+                # print "found paragraph"
                 strlist[i] = _paragraph(string)
 
 

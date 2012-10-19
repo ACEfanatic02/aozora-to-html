@@ -21,10 +21,11 @@ def toRuby(kanji, rubytext):
     return u"""<ruby><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>"""\
             % (kanji, rubytext)
 
-def toBouten(kanji, bouten):
+def toBouten(kanji):
     """
-    Produces a special class of ruby tags for bouten emphasis marks.
+    Produces a special class of ruby tags for 傍点 emphasis marks.
     """
+    bouten = u"・" * len(kanji)
 
     return u"""<ruby class="bouten"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>"""\
             % (kanji, bouten)
@@ -43,9 +44,7 @@ def parseRubytext(string):
         (《.*?》)
         """, re.X)
 
-    bouten_match = re.compile(ur"""
-        ［＃「(.*?)」に傍点］
-        """, re.X|re.UNICODE)
+    bouten_match = re.compile(ur"［＃「(.*?)」に傍点］", re.UNICODE)
 
     for match in furigana_match.finditer(string):
         kanji = match.group(1).lstrip(u'｜')
@@ -54,16 +53,16 @@ def parseRubytext(string):
         string = string.replace(match.group(), 
             toRuby(kanji, rubytext))
 
+    found_bouten = []
+
     for match in bouten_match.finditer(string):
-        ## BROKEN: need to list and then replace in reverse to keep index accurate ## 
-        bouten_count = len(match.group(1))
-        bouten_start = match.start() - bouten_count
+        bouten_start = match.start() - len(match.group(1))
+        print str(match.start() - bouten_start) + u"|" + match.group(1)
 
-        kanji = string[bouten_start:match.start()]
+        found_bouten.append((bouten_start, match.start(), match.end()))
 
-        bouten = u"・" * bouten_count
+    for first, mstart, mend in reversed(found_bouten):
 
-        string = string.replace(string[bouten_start:match.end()],
-            toBouten(kanji, bouten))
+        string = string[:first] + toBouten(match.group(1)) + string[mend:]
 
     return string
