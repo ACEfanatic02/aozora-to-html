@@ -15,7 +15,8 @@ _TOP = """
 <html>
 <head>
   <title></title>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" type="text/css" href="res/novel.css" />
 </head>
 <body>
   <div id="container">

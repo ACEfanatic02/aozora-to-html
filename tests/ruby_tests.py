@@ -4,14 +4,14 @@ import unittest
 import sys
 
 sys.path.append('..')
-from aozora import Rubylizer
+import aozora.Rubylizer as Rubylizer
 
 class TestRuby(unittest.TestCase):
 
-    def test_toHtml(self):
+    def test_toRuby(self):
 
         self.assertEquals(u"<ruby><rb>Kanji</rb><rp>(</rp><rt>Ruby</rt><rp>)</rp></ruby>",
-            Rubylizer.toHtml(u"Kanji", u"Ruby"))
+            Rubylizer.toRuby(u"Kanji", u"Ruby"))
 
     def test_parseRubytext(self):
 
@@ -26,3 +26,15 @@ class TestRuby(unittest.TestCase):
         self.assertEquals(multi_ruby_expect,
             Rubylizer.parseRubytext(multi_ruby_data))
 
+    def test_bouten(self):
+
+        single_bouten_data = u"おかしなことはつきもの［＃「つきもの」に傍点］だ"
+        multi_bouten_data  = u"激しい運動［＃「運動」に傍点］とか言うのならまだしも、活動［＃「活動」に傍点］を禁じられている"
+
+        single_bouten_expect = u"""おかしなことは<ruby class="bouten"><rb>つきもの</rb><rp>(</rp><rt>・・・・</rt><rp>)</rp></ruby>だ"""
+        multi_bouten_expect  = u"""激しい<ruby class="bouten"><rb>運動</rb><rp>(</rp><rt>・・</rt><rp>)</rp></ruby>とか言うのならまだしも、<ruby class="bouten"><rb>活動</rb><rp>(</rp><rt>・・</rt><rp>)</rp></ruby>を禁じられている"""
+
+        self.assertEquals(single_bouten_expect,
+            Rubylizer.parseRubytext(single_bouten_data))
+        self.assertEquals(multi_bouten_expect,
+            Rubylizer.parseRubytext(multi_bouten_data))

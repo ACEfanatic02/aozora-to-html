@@ -27,8 +27,7 @@ def toBouten(kanji):
     """
     bouten = u"・" * len(kanji)
 
-    return u"""<ruby class="bouten"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>"""\
-            % (kanji, bouten)
+    return u"""<ruby class="bouten"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>""" % (kanji, bouten)
 
 def parseRubytext(string):
     """
@@ -42,9 +41,9 @@ def parseRubytext(string):
         [々\u3400-\u4DB5\u4E00-\u9FCB\uF900-\uFA6A]+)     
         # match and capture ruby statement
         (《.*?》)
-        """, re.X)
+        """, re.X|re.UNICODE)
 
-    bouten_match = re.compile(ur"［＃「(.*?)」に傍点］", re.UNICODE)
+    bouten_match = re.compile(ur"［＃「(.+?)」に傍点］", re.UNICODE)
 
     for match in furigana_match.finditer(string):
         kanji = match.group(1).lstrip(u'｜')
@@ -53,16 +52,20 @@ def parseRubytext(string):
         string = string.replace(match.group(), 
             toRuby(kanji, rubytext))
 
+
+    ## STILL BROKEN -- not sure why.  Breaks on multiple matches within
+    ## same string. ##
+
     found_bouten = []
 
     for match in bouten_match.finditer(string):
         bouten_start = match.start() - len(match.group(1))
-        print str(match.start() - bouten_start) + u"|" + match.group(1)
+        # print str(match.start() - bouten_start) + u"|" + match.group(1)
 
-        found_bouten.append((bouten_start, match.start(), match.end()))
+        found_bouten.append((bouten_start, match))
 
-    for first, mstart, mend in reversed(found_bouten):
+    for first, match in reversed(found_bouten):
 
-        string = string[:first] + toBouten(match.group(1)) + string[mend:]
+        string = string[:first] + toBouten(match.group(1)) + string[match.end():]
 
     return string

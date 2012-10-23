@@ -1,0 +1,38 @@
+
+body {
+    background-color: #333;
+}
+
+#container {
+    margin: 0 auto;
+    width: 960px;
+    background-color: #404444;
+    padding: 10px;
+}
+
+.chapter_head {
+    font-weight: bold;
+    color: #0FF;
+}
+
+.pg {
+    color: #DDD;
+}
+
+.pagenumber {
+    display: block;
+    text-align: center;
+    color: #998;
+}
+
+.bouten rt {
+    font-weight: bold;
+}
+
+.bouten {
+    ruby-align: distribute-space;
+}
+
+ruby {
+    ruby-overhang: auto;
+}

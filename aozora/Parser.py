@@ -23,7 +23,7 @@ class NovelParser(object):
         object.__init__(self)
 
         self.pglen = pglen
-        self.heading_regex = re.compile(heading_regex)
+        self.heading_regex = re.compile(heading_regex, re.UNICODE)
 
     def _clense(self, text):
         """
@@ -59,7 +59,7 @@ class NovelParser(object):
                
                 # Okay, we need a new page: look for the next good breakpoint:
                 offset = 0
-                while not (text[cur_pos + offset] in u"、。！？!?\n"):
+                while not (text[cur_pos + offset] in u"、。\n"):
                     
                     # Don't go past EOF            
                     if offset + cur_pos == text_len:
@@ -102,7 +102,7 @@ class NovelParser(object):
         headings = []
 
         for match in self.heading_regex.finditer(text):
-            headings.append(match.start)
+            headings.append(match.start())
 
         for index, pos in enumerate(reversed(headings)):
             text = text[:pos] + heading_marker + text[pos:]

@@ -4,8 +4,44 @@
 		"selected_items":
 		[
 			[
+				"borderco",
+				"border-color"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"color",
+				"color"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
 				"bou",
+				"boutenAsBold"
+			],
+			[
+				"ma",
+				"match"
+			],
+			[
+				"fo",
+				"found_bouten"
+			],
+			[
+				"rev",
+				"reversed"
+			],
+			[
+				"bout",
 				"bouten_start"
+			],
+			[
+				"bo",
+				"bouten_match"
 			],
 			[
 				"fin",
@@ -296,10 +332,6 @@
 				"lyricVal"
 			],
 			[
-				"ma",
-				"mangaVal"
-			],
-			[
 				"sel",
 				"self"
 			],
@@ -482,38 +514,6 @@
 			[
 				"ass",
 				"assertAlmostEqual"
-			],
-			[
-				"ne",
-				"net_score"
-			],
-			[
-				"ly",
-				"lyric_score"
-			],
-			[
-				"subs",
-				"SUBS"
-			],
-			[
-				"log",
-				"log_undoLast"
-			],
-			[
-				"logun",
-				"log_undoTstmp"
-			],
-			[
-				"f",
-				"first"
-			],
-			[
-				"asser",
-				"assertEqual"
-			],
-			[
-				"clo",
-				"clonelog"
 			]
 		]
 	},
@@ -560,6 +560,22 @@
 			}
 		},
 		{
+			"file": "t/res/novel.css",
+			"settings":
+			{
+				"buffer_size": 425,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/bryantaylor/python_projects/aozora_parser/proc/nisemonogatari01.html",
+			"settings":
+			{
+				"buffer_size": 275730,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "aozora_to_html.py",
 			"settings":
 			{
@@ -571,7 +587,7 @@
 			"file": "aozora/Parser.py",
 			"settings":
 			{
-				"buffer_size": 3872,
+				"buffer_size": 3870,
 				"line_ending": "Unix"
 			}
 		},
@@ -579,7 +595,7 @@
 			"file": "aozora/Rubylizer.py",
 			"settings":
 			{
-				"buffer_size": 1863,
+				"buffer_size": 1935,
 				"line_ending": "Unix"
 			}
 		},
@@ -587,7 +603,7 @@
 			"file": "aozora/HtmlBuilder.py",
 			"settings":
 			{
-				"buffer_size": 2233,
+				"buffer_size": 2306,
 				"line_ending": "Unix"
 			}
 		}
@@ -644,6 +660,7 @@
 	},
 	"file_history":
 	[
+		"/home/bryantaylor/python_projects/aozora_parser/proc/res/novel.css",
 		"/home/bryantaylor/python_projects/aozora_new/t/bake01.html",
 		"/home/bryantaylor/Tadoku Tools/PageMarker.py",
 		"/home/bryantaylor/python_projects/aozora_new/aozora/HtmlBuilder.py",
@@ -753,7 +770,6 @@
 		"/home/bryantaylor/c_projects/the_hard_way/ex12.c",
 		"/home/bryantaylor/c_projects/the_hard_way/ex11.c",
 		"/home/bryantaylor/python_projects/aozora_parser/proc/nisemonogatari01.html",
-		"/home/bryantaylor/python_projects/aozora_parser/proc/res/novel.css",
 		"/home/bryantaylor/testruby.html",
 		"/home/bryantaylor/python_projects/aozora_parser/template.html",
 		"/home/bryantaylor/python_projects/aozora_parser/test/test.txt",
@@ -789,6 +805,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"meta",
+			"css",
 			"return",
 			"[]\n",
 			"default",
@@ -823,7 +841,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -950,8 +968,8 @@
 						"selection":
 						[
 							[
-								69121,
-								69121
+								67610,
+								67610
 							]
 						],
 						"settings":
@@ -961,7 +979,63 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 28853.0,
+						"translation.y": 25558.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "t/res/novel.css",
+					"settings":
+					{
+						"buffer_size": 425,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/bryantaylor/python_projects/aozora_parser/proc/nisemonogatari01.html",
+					"settings":
+					{
+						"buffer_size": 275730,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								302,
+								302
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -969,11 +1043,11 @@
 			]
 		},
 		{
-			"selected": 2,
+			"selected": 1,
 			"sheets":
 			[
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "aozora_to_html.py",
 					"settings":
 					{
@@ -984,8 +1058,8 @@
 						"selection":
 						[
 							[
-								1761,
-								1761
+								2381,
+								2381
 							]
 						],
 						"settings":
@@ -995,81 +1069,53 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 675.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "aozora/Parser.py",
-					"settings":
-					{
-						"buffer_size": 3872,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2010,
-								2010
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1260.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "aozora/Rubylizer.py",
-					"settings":
-					{
-						"buffer_size": 1863,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1551,
-								1551
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 405.0,
+						"translation.y": 1035.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "aozora/HtmlBuilder.py",
+					"file": "aozora/Parser.py",
 					"settings":
 					{
-						"buffer_size": 2233,
+						"buffer_size": 3870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1337,
-								1337
+								1928,
+								1928
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "aozora/Rubylizer.py",
+					"settings":
+					{
+						"buffer_size": 1935,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1683,
+								1683
 							]
 						],
 						"settings":
@@ -1079,7 +1125,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 190.0,
+						"translation.y": 270.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "aozora/HtmlBuilder.py",
+					"settings":
+					{
+						"buffer_size": 2306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1560,
+								1560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Djaneiro/Syntaxes/Python Django.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
