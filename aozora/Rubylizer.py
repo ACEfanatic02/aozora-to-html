@@ -27,7 +27,17 @@ def toBouten(kanji):
     """
     bouten = u"・" * len(kanji)
 
-    return u"""<ruby class="bouten"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>""" % (kanji, bouten)
+    return u'<ruby class="bouten"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>'\
+            % (kanji, bouten)
+
+def toBousen(kanji):
+    """
+    Produces a special class of ruby tags for 傍線 marks.
+    """
+    bousen = u"ー" * len(kanji)
+
+    return u'<ruby class="bousen"><rb>%s</rb><rp>(</rp><rt>%s</rt><rp>)</rp></ruby>'\
+            % (kanji, bousen)
 
 def parseRubytext(string):
     """
@@ -43,7 +53,8 @@ def parseRubytext(string):
         (《.*?》)
         """, re.X|re.UNICODE)
 
-    bouten_match = re.compile(ur"［＃「(.+?)」に傍点］", re.UNICODE)
+    bouten_match = re.compile(ur"(.+?)［＃「\1」に傍点］", re.UNICODE)
+    bousen_match = re.compile(ur"(.+?)［＃「\1」に傍線］", re.UNICODE)
 
     for match in furigana_match.finditer(string):
         kanji = match.group(1).lstrip(u'｜')
@@ -52,20 +63,20 @@ def parseRubytext(string):
         string = string.replace(match.group(), 
             toRuby(kanji, rubytext))
 
-
-    ## STILL BROKEN -- not sure why.  Breaks on multiple matches within
-    ## same string. ##
-
     found_bouten = []
-
     for match in bouten_match.finditer(string):
-        bouten_start = match.start() - len(match.group(1))
-        # print str(match.start() - bouten_start) + u"|" + match.group(1)
+        found_bouten.append(match)
 
-        found_bouten.append((bouten_start, match))
+    for match in reversed(found_bouten):
+        string = string[:match.start()] + toBouten(match.group(1)) +\
+            string[match.end():]
 
-    for first, match in reversed(found_bouten):
+    found_bousen = []
+    for match in bousen_match.finditer(string):
+        found_bousen.append(match)
 
-        string = string[:first] + toBouten(match.group(1)) + string[match.end():]
+    for match in reversed(found_bousen):
+        string = string[:match.start()] + toBousen(match.group(1)) +\
+            string[match.end():]
 
     return string

@@ -25,6 +25,7 @@ logging.basicConfig(level = logging.CRITICAL)
 ruby_toruby = ruby_tests.TestRuby('test_toRuby')
 ruby_parse  = ruby_tests.TestRuby('test_parseRubytext')
 ruby_bouten = ruby_tests.TestRuby('test_bouten')
+ruby_bousen = ruby_tests.TestRuby('test_bousen')
 
 test_suite = test_runner.ModuleTestRunner()
 
@@ -38,7 +39,8 @@ test_suite = test_runner.ModuleTestRunner()
 
 test_suite.addTestList("Ruby", [ruby_toruby,
                                 ruby_parse,
-                                ruby_bouten,])
+                                ruby_bouten,
+                                ruby_bousen,])
 
 if __name__ == "__main__":
     # Run test suite

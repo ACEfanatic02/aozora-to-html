@@ -38,3 +38,12 @@ class TestRuby(unittest.TestCase):
             Rubylizer.parseRubytext(single_bouten_data))
         self.assertEquals(multi_bouten_expect,
             Rubylizer.parseRubytext(multi_bouten_data))
+
+    def test_bousen(self):
+
+        bousen_data = u"「あんなこと［＃「あんなこと」に傍線］やこんなこと［＃「こんなこと」に傍線］もしてみたかったわね」"
+
+        bousen_expect = u'「<ruby class="bousen"><rb>あんなこと</rb><rp>(</rp><rt>ーーーーー</rt><rp>)</rp></ruby>や<ruby class="bousen"><rb>こんなこと</rb><rp>(</rp><rt>ーーーーー</rt><rp>)</rp></ruby>もしてみたかったわね」'
+
+        self.assertEquals(bousen_expect,
+            Rubylizer.parseRubytext(bousen_data))

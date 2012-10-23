@@ -11,8 +11,16 @@ TOOLS:
 -- 1. Rubylizer
     
     Turns 青空文庫 furigana into actual ruby tags (supported natively in Chrome,
-    and via extensions in Firefox.)
+    and via extensions in Firefox.)  Also processes marked 傍点 and 傍線 emphasis.
 
+-- 2. NovelParser
+
+    Breaks text down into pages of ~400 characters (attempting to break cleanly at
+    punctuation.)
+
+-- 3. HtmlBuilder
+
+    Takes the parser's output and builds a 
 """
 
 __metadata__ = """
@@ -21,7 +29,6 @@ Credits:  - Jeremy Davidson (BlackDragonHunt) -- for the original suite
             of Tadoku Tools on which this project is based.
           - Brian Nez (thedude@bri1.com) -- for 'pretty.py', used for color in 
             the testing suite.
-          - Uses BeautifulSoup for HTML processing.
 Disclaimer: No warranty, provided 'as-is', etc.  Thou shalt not blame me if 
             this script breaks or damages your machine or data.
 """
@@ -37,10 +44,9 @@ from aozora.Parser import NovelParser
 from aozora.HtmlBuilder import buildHtml
 
 HELP_USAGE = """USAGE:
-$ python aozora_to_html.py <filename>
+$ python aozora_to_html.py <input filename> <output filename>
 
-Will output to directory ./<filename>/ .  Will overwrite any existing files on
-name conflict.
+Will overwrite output file without prompting.
 """
 
 def help():
